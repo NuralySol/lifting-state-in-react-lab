@@ -1,8 +1,6 @@
-// src/App.jsx
-// Import all of the components
-
-import './src/components/IngredientList.jsx';
-import './src/components/BurgerStack.jsx';
+// Imporing all of the components 
+import IngredientList from './components/IngredientList';
+import BurgerStack from './components/BurgerStack';
 
 import './App.css';
 
@@ -28,12 +26,11 @@ const App = () => {
     <main>
       <h1>Burger Stacker</h1>
       <section>
-        <IngredientList />  // add here! 
+        <IngredientList />
         <BurgerStack />
       </section>
     </main>
   );
 };
-
 
 export default App;
