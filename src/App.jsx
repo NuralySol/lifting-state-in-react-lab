@@ -1,4 +1,4 @@
-// Imporing all of the components 
+import React, { useState } from 'react';
 import IngredientList from './components/IngredientList';
 import BurgerStack from './components/BurgerStack';
 
@@ -22,12 +22,21 @@ export const availableIngredients = [
 ];
 
 const App = () => {
+  const [stack, setStack] = useState([]);
+  const addToBurger = (ingredient) => {
+    setStack([...stack, ingredient]);
+  };
+
+  const removeFromBurger = () => {
+    setStack(stack.slice(0, -1));
+  };
+
   return (
     <main>
       <h1>Burger Stacker</h1>
       <section>
-        <IngredientList />
-        <BurgerStack />
+        <IngredientList ingredients={availableIngredients} addToBurger={addToBurger} />
+        <BurgerStack stack={stack} removeFromBurger={removeFromBurger} />
       </section>
     </main>
   );
